@@ -1,26 +1,39 @@
-# Raport audytu POM
+# 📑 RAPORT AUDYTU ARCHITEKTURY POM
+**Projekt:** Automatyzacja ApiDemos  
+**Moduł:** Blok 6 - Inżynieria Frameworka  
 
-## Cel
+---
 
-Celem audytu była ocena implementacji wzorca Page Object Model oraz weryfikacja wykonania scenariusza testowego. [file:2][file:3][file:4][file:1]
+## 🔍 1. Weryfikacja Spójności Logów
+> Cel: Potwierdzenie, że warstwa abstrakcji poprawnie komunikuje się z warstwą danych.
 
-## Struktura
+- [x] **Log `64_pom_audit.log`:** potwierdzono poprawne wykonanie **3 kluczowych akcji biznesowych**.
+- [x] **Spójność selektorów:** identyfikatory użyte w logice testu są zgodne z działaniami zarejestrowanymi w audycie.
+- [x] **Błędy krytyczne:** nie odnotowano, system działa poprawnie.
 
-Projekt składa się z trzech warstw: `BasePage`, `MainPage` oraz scenariusza `run_engineered_test()`. [file:3][file:4][file:2]
-`BasePage` odpowiada za wczytywanie selektorów z pliku JSON, a `MainPage` udostępnia metody biznesowe zamiast bezpośredniej pracy na locatorach. [file:3][file:4]
+---
 
-## Wynik
+## 🏗️ 2. Analiza Elastyczności (Maintainability)
 
-Log potwierdza poprawne wykonanie trzech kroków scenariusza. [file:1]
-Odnaleziono nagłówek strony, wykonano kliknięcie w element `add` oraz wpisano frazę `Automatyzacja Mobilna` do pola `search_button`. [file:1]
+Zastosowanie wzorca **Page Object Model** poprawia czytelność projektu i upraszcza jego utrzymanie.
 
-## Ocena
+* **Separation of Concerns:** kod testu jest oddzielony od technicznych szczegółów interfejsu.
+* **Centralizacja selektorów:** warstwa bazowa odpowiada za obsługę mapy identyfikatorów.
+* **Łatwiejsza refaktoryzacja:** zmiany w selektorach można wprowadzać bez modyfikowania logiki scenariusza.
+* **Lepsza skalowalność:** obecna struktura stanowi dobrą bazę do dalszej rozbudowy frameworka.
 
-Największą zaletą rozwiązania jest czytelny podział odpowiedzialności zgodny z POM. [file:2][file:3][file:4]
-Ograniczeniem pozostaje brak rzeczywistej integracji z driverem, ponieważ metody zwracają komunikaty tekstowe zamiast wykonywać realne akcje na UI. [file:4]
+---
 
-## Rekomendacje
+## 🚀 3. Wnioski i Sugestie Rozwojowe
 
-- Dodać obsługę rzeczywistego drivera Appium lub Selenium. [file:4]
-- Zastąpić `print()` mechanizmem logowania i mocniejszą obsługą błędów. [file:3]
-- Utrzymać obecną strukturę, bo stanowi dobrą bazę do dalszej rozbudowy frameworka. [file:2][file:3][file:4]
+Implementacja poprawnie prezentuje założenia architektury POM, ale obecnie ma charakter demonstracyjny i wymaga dalszej rozbudowy.
+
+1. **Dodać `wait_for_element()`** – warto rozszerzyć klasę bazową o mechanizm *Explicit Waits*.
+2. **Rozbudować obsługę wyjątków** – przy braku selektora dobrze byłoby dodawać bardziej szczegółowe raportowanie błędów.
+3. **Podłączyć realny driver** – obecne metody można rozwinąć do pełnej integracji z Appium lub Selenium.
+
+---
+**Podpisano:**  
+*Inżynier Testów:* **Dawid Jakubowski**  
+*Numer Albumu:* `95983`  
+*Data:* `[2026-03-28]`
