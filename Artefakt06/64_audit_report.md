@@ -34,6 +34,6 @@ Implementacja poprawnie prezentuje założenia architektury POM, ale obecnie ma 
 
 ---
 **Podpisano:**  
-*Inżynier Testów:* **Dawid Jakubowski**  
+*Inżynier Testów:* **Dawid**  
 *Numer Albumu:* `95983`  
 *Data:* `[2026-03-28]`
