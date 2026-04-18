@@ -114,7 +114,7 @@ Allure umożliwia:
 
 Poniżej zrzut ekranu raportu Allure:
 
-![Raport Allure](Artefakt10/screenshots/artefakt10-allure.png)
+![Raport Allure](Artefakt10/screenshots/allure-dashboard.png)
 
 ---
 
